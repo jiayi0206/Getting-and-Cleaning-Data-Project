@@ -9,4 +9,5 @@
 student_info <- students4 %>%
   select(id, name, sex) %>%
   ### Your code here %>%
+  unique %>%
   print
