@@ -4,7 +4,7 @@ data.table       xlsx        XML
       TRUE       TRUE       TRUE 
 
 
-##How many properties are worth $1,000,000 or more?
+##Qestion 1: How many properties are worth $1,000,000 or more?
 
 if (!file.exists("data")){
      dir.create("data")
