@@ -1,0 +1,6 @@
+> packages <‐ c("data.table", "xlsx", "XML")
+> sapply(packages, require, character.only = TRUE, quietly = TRUE)
+data.table       xlsx        XML 
+      TRUE       TRUE       TRUE 
+
+
