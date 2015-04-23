@@ -4,3 +4,6 @@ data.table       xlsx        XML
       TRUE       TRUE       TRUE 
 
 
+if (!file.exists("data")){
+     dir.create("data")
+     }
