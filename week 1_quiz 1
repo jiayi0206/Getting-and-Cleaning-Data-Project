@@ -22,3 +22,15 @@ sum(!is.na(data$VAL[data$VAL==24]))
 ##[1] 53
 
 
+##Question 2
+##Read rows 18-23 and columns 7-15 into R and assign the result to a variable called:
+##dat 
+##What is the value of:
+##sum(dat$Zip*dat$Ext,na.rm=T) 
+
+> library(xlsx)
+> col <- 7:15
+> row <- 18:23
+> dat <- read.xlsx("./data/NGAP.xlsx", sheetIndex=1, header=TRUE, colIndex=col, rowIndex=row)
+> sum(dat$Zip*dat$Ext,na.rm=T)
+> [1] 36534720
