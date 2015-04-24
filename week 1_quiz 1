@@ -42,7 +42,17 @@ data.table       xlsx        XML      rJava
 
 ##Question 4
 
+##How many restaurants have zipcode 21231?
 
+fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+download.file(fileURL, destfile=tf <- tempfile(fileext=".xml"))
+doc <- xmlParse(tf)
+zip <- xpathSApply(doc, "/response/row/row/zipcode", xmlValue)
+sum(zip == "21231")
+##[1] 127
+
+##> tf
+##[1] "C:\\Users\\I048434\\AppData\\Local\\Temp\\RtmpaYvDyI\\file17c821d87c3.xml"
 
 
 
