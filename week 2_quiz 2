@@ -57,7 +57,13 @@ http://biostat.jhsph.edu/~jleek/contact.html
 
 
 
+Question 5:
+##Read this data set into R and report the sum of the numbers in the fourth of the nine columns. 
 
+data <- read.csv("./data/getdata-wksst8110.for", header = TRUE)
+file_name <- "./data/getdata-wksst8110.for"
+df <- read.fwf(file=file_name,widths=c(-1,9,-5,4,4,-5,4,4,-5,4,4,-5,4,4), skip=4)
+sum(df[, 4])
 
 
 
