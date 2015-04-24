@@ -1,7 +1,7 @@
-> packages <‐ c("data.table", "xlsx", "XML")
+> packages <‐ c("data.table", "xlsx", "XML", "rJava")
 > sapply(packages, require, character.only = TRUE, quietly = TRUE)
-data.table       xlsx        XML 
-      TRUE       TRUE       TRUE 
+data.table       xlsx        XML      rJava 
+      TRUE       TRUE       TRUE       TRUE 
 
 
 ##Qestion 1: How many properties are worth $1,000,000 or more?
