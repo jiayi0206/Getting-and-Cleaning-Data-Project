@@ -28,10 +28,14 @@ data.table       xlsx        XML
 ##What is the value of:
 ##sum(dat$Zip*dat$Ext,na.rm=T) 
 
+> fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
+> download.file(fileUrl, destfile = "./data/nga3.xlsx", mode="wb")
+#write-binary (wb) since xlsx is basically a binary file (zip).
+
 > library(xlsx)
-> col <- 7:15
-> row <- 18:23
-> dat <- read.xlsx("./data/NGAP.xlsx", sheetIndex=1, header=TRUE, colIndex=col, rowIndex=row)
+> ncol <- 7:15
+> nrow <- 18:23
+> dat <- read.xlsx("./data/nga3.xlsx", sheetIndex=1, header=TRUE, rowIndex=nrow, colIndex=ncol)
 > sum(dat$Zip*dat$Ext,na.rm=T)
 ## [1] 36534720
 
