@@ -84,3 +84,21 @@ dt[order(rankingGDP, decreasing = TRUE), list(CountryCode, Long.Name.x, Long.Nam
 ##1:         KNA St. Kitts and Nevis St. Kitts and Nevis        178  767 
 
 
+
+
+
+
+
+
+Question 4:
+What is the average GDP ranking for the "High income: OECD" and "High income: nonOECD" group?
+
+> dt[, mean(rankingGDP, na.rm = TRUE), by = Income.Group]
+Income.Group        V1
+1: High income: nonOECD  91.91304
+2:           Low income 133.72973
+3:  Lower middle income 107.70370
+4:  Upper middle income  92.13333
+5:    High income: OECD  32.96667
+6:                   NA 131.00000
+7:                            NaN
