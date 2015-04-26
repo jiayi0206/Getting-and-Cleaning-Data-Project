@@ -18,18 +18,18 @@ require("data.table")
 require("reshape2")
 
 # Load activity labels
-activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")[,2]
+activity_labels <- read.table("./data/activity_labels.txt")[,2]
 
 # Load data column 
-feature <- read.table("./UCI HAR Dataset/features.txt")[,2]
+feature <- read.table("./data/features.txt")[,2]
 
 # Extract the measurements on the mean and standard deviation for each measurement.
 extract_feature <- grepl("mean|std", feature)
 
 # Load and process X_test & y_test data.
-X_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("./UCI HAR Dataset/test/y_test.txt")
-subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+X_test <- read.table("./data/test/X_test.txt")
+y_test <- read.table("./data/test/y_test.txt")
+subject_test <- read.table("./data/test/subject_test.txt")
 
 names(X_test) = feature
 
@@ -45,10 +45,10 @@ names(subject_test) = "subject"
 test_data <- cbind(as.data.table(subject_test), y_test, X_test)
 
 # Load and process X_train & y_train data.
-X_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
-y_train <- read.table("./UCI HAR Dataset/train/y_train.txt")
+X_train <- read.table("./data/train/X_train.txt")
+y_train <- read.table("./data/train/y_train.txt")
 
-subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
+subject_train <- read.table("./data/train/subject_train.txt")
 
 names(X_train) = feature
 
