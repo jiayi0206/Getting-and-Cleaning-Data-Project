@@ -24,7 +24,7 @@ activity_labels <- read.table("./data/activity_labels.txt")[,2]
 feature <- read.table("./data/features.txt")[,2]
 
 # Extract the measurements on the mean and standard deviation for each measurement.
-extract_feature <- grepl("mean|std", feature)
+feature2 <- grepl("mean|std", feature)
 
 # Load and process X_test & y_test data.
 X_test <- read.table("./data/test/X_test.txt")
@@ -34,7 +34,7 @@ subject_test <- read.table("./data/test/subject_test.txt")
 names(X_test) = feature
 
 # Extract only the measurements on the mean and standard deviation for each measurement.
-X_test = X_test[,extract_feature]
+X_test = X_test[,feature2]
 
 # Load activity labels
 y_test[,2] = activity_labels[y_test[,1]]
@@ -53,7 +53,7 @@ subject_train <- read.table("./data/train/subject_train.txt")
 names(X_train) = feature
 
 # Extract only the measurements on the mean and standard deviation for each measurement.
-X_train = X_train[,extract_feature]
+X_train = X_train[,feature2]
 
 # Load activity data
 y_train[,2] = activity_labels[y_train[,1]]
