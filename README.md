@@ -14,6 +14,10 @@ Finally I create an independent tidy data set with the average of each variable 
 
 
 
+
+
+
+
 Getting and Cleaning Data
 Course Project
 
