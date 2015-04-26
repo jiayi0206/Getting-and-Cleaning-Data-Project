@@ -1,6 +1,15 @@
 # Getting-and-Cleaning-Data-Project
 
 
+First of all, I merge the training and the test sets to create one data set, then I extract only the measurements on the mean and standard deviation for each measurement
+Next,use activity names to name the activities in the data set
+Finally I create an independent tidy data set with the average of each variable for each activity and each subject
+
+
+
+
+
+
 Getting and Cleaning Data
 Course Project
 
@@ -28,9 +37,3 @@ run_analysis.R file will help you to install the dependencies automatically. It 
 
 
 
-
-
-
-First of all, I merge the training and the test sets to create one data set, then I extract only the measurements on the mean and standard deviation for each measurement
-Next,use activity names to name the activities in the data set
-Finally I create an independent tidy data set with the average of each variable for each activity and each subject
