@@ -42,4 +42,17 @@ Warning message:
 NAs introduced by coercion 
 > mean(gdp, na.rm = TRUE)
 [1] 377652.4
-> 
+
+
+
+
+
+Question 3
+In the data set from Question 2 what is a regular expression that would allow you to count the number of countries whose 
+name begins with "United"? 
+Assume that the variable with the country names in it is named countryNames. How many countries begin with United?
+
+> United <- grepl("^United", dt$Long.Name)
+> summary(United)
+   Mode   FALSE    TRUE    NA's 
+logical     211       3       0
