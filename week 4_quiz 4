@@ -15,3 +15,31 @@ downloaded 4.0 Mb
 > varNamesSplit <- strsplit(varNames, "wgtp")
 > varNamesSplit[[123]]
 [1] ""   "15"
+
+
+
+
+
+Question 2
+Remove the commas from the GDP numbers in millions of dollars and average them. What is the average? 
+
+
+> url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv"
+> file <- file.path(getwd(), "FGDP.csv")
+> download.file(url, file, method = "internal")
+trying URL 'https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FGDP.csv'
+Content type 'text/csv' length 9630 bytes
+opened URL
+downloaded 9630 bytes
+
+> dt <- data.table(read.csv(file, skip = 4, nrows = 215, stringsAsFactors = FALSE))
+> 
+> dt <- dt[X != ""]
+> dt <- dt[, list(X, X.1, X.3, X.4)]
+> setnames(dt, c("X", "X.1", "X.3", "X.4"), c("CountryCode", "rankingGDP", "Long.Name", "gdp"))
+> gdp <- as.numeric(gsub(",", "", dt$gdp))
+Warning message:
+NAs introduced by coercion 
+> mean(gdp, na.rm = TRUE)
+[1] 377652.4
+> 
