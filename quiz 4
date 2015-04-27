@@ -1,0 +1,17 @@
+Question 1
+Apply strsplit() to split all the names of the data frame on the characters "wgtp".
+What is the value of the 123 element of the resulting list?
+
+> url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+> file <- file.path(getwd(), "ss06hid.csv")
+> download.file(url, file, method = "internal")
+trying URL 'https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv'
+Content type 'text/csv' length 4246554 bytes (4.0 Mb)
+opened URL
+downloaded 4.0 Mb
+
+> dt <- data.table(read.csv(file))
+> varNames <- names(dt)
+> varNamesSplit <- strsplit(varNames, "wgtp")
+> varNamesSplit[[123]]
+[1] ""   "15"
