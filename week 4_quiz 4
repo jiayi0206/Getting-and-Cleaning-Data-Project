@@ -56,3 +56,40 @@ Assume that the variable with the country names in it is named countryNames. How
 > summary(United)
    Mode   FALSE    TRUE    NA's 
 logical     211       3       0
+
+
+
+
+
+Question 4
+Match the data based on the country shortcode. Of the countries for which the end of the fiscal year is available.
+How many end in June? 
+
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FEDSTATS_Country.csv"
+file <- file.path(getwd(), "EDSTATS_Country.csv")
+download.file(url, file, method = "internal")
+dted <- data.table(read.csv(file))
+
+dtmerge <- merge(dt, dted, all = TRUE, by = c("CountryCode"))
+isFiscalYearEnd <- grepl("fiscal year end", tolower(dtmerge$Special.Notes))
+isJune <- grepl("june", tolower(dtmerge$Special.Notes))
+table(isFiscalYearEnd, isJune)
+
+              isJune
+isFiscalYearEnd FALSE TRUE
+          FALSE   203    3
+          TRUE     19   13
+
+
+Question 5:
+You can use the quantmod (http://www.quantmod.com/) package to get historical stock prices for publicly traded companies on the NASDAQ and NYSE. Use the following code to download data on Amazon's stock price and get the times the data was sampled.
+library(quantmod)
+amzn = getSymbols("AMZN",auto.assign=FALSE)
+sampleTimes = index(amzn) 
+How many values were collected in 2012? How many values were collected on Mondays in 2012?
+
+
+
+
+
+
