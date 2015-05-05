@@ -1,13 +1,13 @@
 ## Getting-and-Cleaning-Data-Project
 
 
-### First of all, I merge the training and the test sets to create one data set.
+* First of all, I merge the training and the test sets to create one data set.
 
-Then I extract only the measurements on the mean and standard deviation for each measurement.
+* Then I extract only the measurements on the mean and standard deviation for each measurement.
 
-Next,use activity names to name the activities in the data set.
+* Next,use activity names to name the activities in the data set.
 
-Finally I create an independent tidy data set with the average of each variable for each activity and each subject
+* Finally I create an independent tidy data set with the average of each variable for each activity and each subject
 
 
 
