@@ -1,7 +1,7 @@
-# Getting-and-Cleaning-Data-Project
+## Getting-and-Cleaning-Data-Project
 
 
-First of all, I merge the training and the test sets to create one data set.
+### First of all, I merge the training and the test sets to create one data set.
 
 Then I extract only the measurements on the mean and standard deviation for each measurement.
 
